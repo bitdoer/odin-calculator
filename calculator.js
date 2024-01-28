@@ -173,7 +173,13 @@ document.addEventListener("click", function(event) {
             } else if (operator) {
                 operator = "";
             } else if (firstNumber !== "0") {
-                firstNumber = firstNumber.slice(0, -1);
+                if (firstNumber.length === 1) {
+                    firstNumber = "0";
+                } else {
+                    firstNumber = firstNumber.slice(0, -1);
+                }
             }
+            updateDisplay();
+            return;
     }
 });
